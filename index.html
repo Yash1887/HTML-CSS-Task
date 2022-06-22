@@ -10,15 +10,16 @@
     <title>Document</title>
 </head>
 <body class="myFontClass">
+    <div class="menu-list-exit-layer"></div>
     <div class="navbar">
         <div class="container">
             <div>
             <a class="logo" href="#">Pitwo</a>
             </div>
-            <div>
-                <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+            <div >
+                <img id="mobile-cta" class="mobile-menu" onclick="openmenu()" src="images/menu.svg" alt="Open Navigation">
                 <nav>
-                    <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+                    <img id="mobile-exit" class="mobile-menu-exit" onclick="closemenu()" src="images/exit.svg" alt="Close Navigation">
                     <br><br>
                     <div class="nav-list">
                         <div><a href="#">HOME</a></div>
@@ -29,7 +30,6 @@
                         <div><a href="#">CONTACT US</a></div>
                         <div><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div>
                     </div>
-                   
                 </nav>
             </div>
         </div>
@@ -51,9 +51,7 @@
             
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-            
+        </div> 
         <a class="setting-img" href="#"><i class="fa-solid fa-gear fa-2x"></i></a>
     </section>
 
@@ -63,13 +61,21 @@
             <div class="h-divider">
                 <div class="shadow"></div>
             </div>
-
+            <div class="feature-list-mobile">
+                <select onchange="handlechange(event)">
+                    <option value="#"><a href="#">All</a></option>
+                    <option value="#"><a href="#">Branding Design</a></option>
+                    <option value="#"><a href="#">Graphics Design</a></option>
+                    <option value="#"><a href="#">Photogtaphy</a></option>
+                    <option value="#"><a href="#">Web Design</a></option>
+                </select>
+            </div>
             <div class="feature-list">
-                <a class="feature" href="#">All</a>
-                <a class="feature" href="#">Branding Design</a>
-                <a class="feature" href="#">Graphics Design</a>
-                <a class="feature" href="#">Photogtaphy</a>
-                <a class="feature" href="#">Web Design</a>
+                <a href="http://127.0.0.1:5500/index.html">All</a>
+                <a href="http://127.0.0.1:5500/index.html">Branding Design</a>
+                <a href="http://127.0.0.1:5500/index.html">Graphics Design</a>
+                <a href="http://127.0.0.1:5500/index.html">Photogtaphy</a>
+                <a href="http://127.0.0.1:5500/index.html">Web Design</a>
             </div>
             <div class="feature-img">
                 <img src="images/feature-img-1.jpg" alt="image-1">
@@ -131,46 +137,19 @@
                     <p>support.xyz@gmail.com</p>
                 </div>
                 <div class="social-media">
-                    <a href="https://www.facebook.com/bootsnipp"><i class="fa-brands fa-facebook fa-2x"></i></a>
-                    <a href="https://twitter.com/bootsnipp"><i class="fa-brands fa-twitter-square  fa-2x"></i></a>
-                    <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa-brands fa-google-plus-square fa-2x"></i></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter-square  fa-2x"></i></a>
+                    <a href="https://plus.google.com/"><i class="fa-brands fa-google-plus-square fa-2x"></i></i></a>
                     <a href="mailto:#"><i class="fa-solid fa-envelope fa-2x"></i></a>
                     <a href="https://instagram.com/"><i class="fa-brands fa-instagram fa-2x"></i></i></a>
                 </div>
             </div>
         </div>
     </section>
+    
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-        function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          if (n > slides.length) {slideIndex = 1}    
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slides[slideIndex-1].style.display = "block";  
-        }
-    </script>
-    <script>
-        const mobileBtn = document.getElementById('mobile-cta')
-            nav = document.querySelector('nav');
-            mobileBtnExit = document.getElementById('mobile-exit');
-        mobileBtn.addEventListener('click', () => {
-            nav.classList.add('menu-btn');
-        })
-        mobileBtnExit.addEventListener('click', () => {
-            nav.classList.remove('menu-btn');
-        })
-    </script>
+     <script type="text/javascript" src="js/main.js"></script>
+
+    
 </body>
 </html>
